@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Rooms</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="css/room.css" rel="stylesheet">
+
+  <!-- for awesome icons -->
+  <link rel="stylesheet" href= "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">  
+   <!--     Fonts and icons     -->
+   <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+
+   <!-- CSS Files -->
+   <link href="asscet/css/material-dashboard.css?v=2.1.2" rel="stylesheet" />
+</head>
+
+<body load="onLoaderFunc()">
+
+  <div class="inputForm">
+  <center>
+    Patients Name: <input type="text" id="Username" required>
+    Number of Rooms: <input type="number" id="Numseats" required>
+    <br/><br/>
+    <button type="button" class="btn btn-info" onclick="takeData()">Start Selecting</button>
+  </center>
+  </div>
+    
+ <br><br> 
+  <div class="seatStructure">
+  <center>
+    <table>
+      <tr>
+        <td><div class="smallBox greenBox"> Selected Room</div></td>
+        <td><div class="smallBox redBox"> Reserved Rooms</div></td>
+        <td><div class="smallBox emptyBox"> Empty Rooms</div></td>
+       </tr>
+    </table>
+
+  <table id="seatsBlock">
+   <p id="notification"></p>
+      <td colspan="20"><div class="screen">Hospital Rooms</div></td>
+      <br/>
+    </tr>
+    
+    <tr>
+      <td></td>
+      <td></td>
+      <td>1</td>
+      <td>2</td>
+      <td>3</td>
+      <td>4</td>
+      <td>5</td>
+      <td></td>
+      <td>6</td>
+      <td>7</td>
+      <td>8</td>
+      <td>9</td>
+      <td>10</td>
+      <td></td>
+      <td>11</td>
+      <td>12</td>
+      <td>13</td>
+      <td>14</td>
+      <td>15</td>
+      <td>16</td>
+      <td>17</td>
+      <td></td>
+      <td>18</td>
+      <td>19</td>
+      <td>20</td>
+      <td>21</td>
+      <td>22</td>
+      <td>23</td>
+      <td>24</td>
+  </tr>
+    
+  <tr>
+      <td>A</td>
+      <td></td>
+      <td><input type="checkbox" class="seats" value="A1"></td>
+      <td><input type="checkbox" class="seats" value="A2"></td>
+      <td><input type="checkbox" class="seats" value="A3"></td>
+      <td><input type="checkbox" class="seats" value="A4"></td>
+      <td><input type="checkbox" class="seats" value="A5"></td>
+      <td class="seatGap"></td>
+      <td><input type="checkbox" class="seats" value="A6"></td>
+      <td><input type="checkbox" class="seats" value="A7"></td>
+      <td><input type="checkbox" class="seats" value="A8"></td>
+      <td><input type="checkbox" class="seats" value="A9"></td>
+      <td><input type="checkbox" class="seats" value="A10"></td>
+      <td class="seatGap"></td>
+      <td><input type="checkbox" class="seats" value="A11"></td>
+      <td><input type="checkbox" class="seats" value="A12"></td>
+      <td><input type="checkbox" class="seats" value="A13"></td>
+      <td><input type="checkbox" class="seats" value="A14"></td>
+      <td><input type="checkbox" class="seats" value="A15"></td>
+      <td><input type="checkbox" class="seats" value="A16"></td>
+      <td><input type="checkbox" class="seats" value="A17"></td>
+      <td class="seatGap"></td>
+      <td><input type="checkbox" class="seats" value="A18"></td>
+      <td><input type="checkbox" class="seats" value="A19"></td>
+      <td><input type="checkbox" class="seats" value="A20"></td>
+      <td><input type="checkbox" class="seats" value="A21"></td>
+      <td><input type="checkbox" class="seats" value="A22"></td>
+      <td><input type="checkbox" class="seats" value="A23"></td>
+      <td><input type="checkbox" class="seats" value="A24"></td>
+    </tr>
+    
+    <tr>
+      <td>B</td>
+      <td></td>
+      <td><input type="checkbox" class="seats" value="B1"></td>
+      <td><input type="checkbox" class="seats" value="B2"></td>
+      <td><input type="checkbox" class="seats" value="B3"></td>
+      <td><input type="checkbox" class="seats" value="B4"></td>
+      <td><input type="checkbox" class="seats" value="B5"></td>
+      <td></td>
+      <td><input type="checkbox" class="seats" value="B6"></td>
+      <td><input type="checkbox" class="seats" value="B7"></td>
+      <td><input type="checkbox" class="seats" value="B8"></td>
+      <td><input type="checkbox" class="seats" value="B9"></td>
+      <td><input type="checkbox" class="seats" value="B10"></td>
+      <td></td>
+      <td><input type="checkbox" class="seats" value="B11"></td>
+      <td><input type="checkbox" class="seats" value="B12"></td>
+      <td><input type="checkbox" class="seats" value="B13"></td>
+      <td><input type="checkbox" class="seats" value="B14"></td>
+      <td><input type="checkbox" class="seats" value="B15"></td>
+      <td><input type="checkbox" class="seats" value="B16"></td>
+      <td><input type="checkbox" class="seats" value="B17"></td>
+      <td></td>
+      <td><input type="checkbox" class="seats" value="B18"></td>
+      <td><input type="checkbox" class="seats" value="B19"></td>
+      <td><input type="checkbox" class="seats" value="B20"></td>
+      <td><input type="checkbox" class="seats" value="B21"></td>
+      <td><input type="checkbox" class="seats" value="B22"></td>
+      <td><input type="checkbox" class="seats" value="B23"></td>
+      <td><input type="checkbox" class="seats" value="B24"></td>
+    </tr>
+    
+    <tr>
+      <td>C</td>
+      <td></td>
+      <td><input type="checkbox" class="seats" value="C1"></td>
+      <td><input type="checkbox" class="seats" value="C2"></td>
+      <td><input type="checkbox" class="seats" value="C3"></td>
+      <td><input type="checkbox" class="seats" value="C4"></td>
+      <td><input type="checkbox" class="seats" value="C5"></td>
+      <td></td>
+      <td><input type="checkbox" class="seats" value="C6"></td>
+      <td><input type="checkbox" class="seats" value="C7"></td>
+      <td><input type="checkbox" class="seats" value="C8"></td>
+      <td><input type="checkbox" class="seats" value="C9"></td>
+      <td><input type="checkbox" class="seats" value="C10"></td>
+      <td></td>
+      <td><input type="checkbox" class="seats" value="C11"></td>
+      <td><input type="checkbox" class="seats" value="C12"></td>
+      <td><input type="checkbox" class="seats" value="C13"></td>
+      <td><input type="checkbox" class="seats" value="C14"></td>
+      <td><input type="checkbox" class="seats" value="C15"></td>
+      <td><input type="checkbox" class="seats" value="C16"></td>
+      <td><input type="checkbox" class="seats" value="C17"></td>
+      <td></td>
+      <td><input type="checkbox" class="seats" value="C18"></td>
+      <td><input type="checkbox" class="seats" value="C19"></td>
+      <td><input type="checkbox" class="seats" value="C20"></td>
+      <td><input type="checkbox" class="seats" value="C21"></td>
+      <td><input type="checkbox" class="seats" value="C22"></td>
+      <td><input type="checkbox" class="seats" value="C23"></td>
+      <td><input type="checkbox" class="seats" value="C24"></td>
+  </tr>
+    
+  <tr>
+      <td>D</td>
+      <td></td>
+      <td><input type="checkbox" class="seats" value="D1"></td>
+      <td><input type="checkbox" class="seats" value="D2"></td>
+      <td><input type="checkbox" class="seats" value="D3"></td>
+      <td><input type="checkbox" class="seats" value="D4"></td>
+      <td><input type="checkbox" class="seats" value="D5"></td>
+      <td></td>
+      <td><input type="checkbox" class="seats" value="D6"></td>
+      <td><input type="checkbox" class="seats" value="D7"></td>
+      <td><input type="checkbox" class="seats" value="D8"></td>
+      <td><input type="checkbox" class="seats" value="D9"></td>
+      <td><input type="checkbox" class="seats" value="D10"></td>
+      <td></td>
+      <td><input type="checkbox" class="seats" value="D11"></td>
+      <td><input type="checkbox" class="seats" value="D12"></td>
+      <td><input type="checkbox" class="seats" value="D13"></td>
+      <td><input type="checkbox" class="seats" value="D14"></td>
+      <td><input type="checkbox" class="seats" value="D15"></td>
+      <td><input type="checkbox" class="seats" value="D16"></td>
+      <td><input type="checkbox" class="seats" value="D17"></td>
+      <td></td>
+      <td><input type="checkbox" class="seats" value="D18"></td>
+      <td><input type="checkbox" class="seats" value="D19"></td>
+      <td><input type="checkbox" class="seats" value="D20"></td>
+      <td><input type="checkbox" class="seats" value="D21"></td>
+      <td><input type="checkbox" class="seats" value="D22"></td>
+      <td><input type="checkbox" class="seats" value="D23"></td>
+      <td><input type="checkbox" class="seats" value="D24"></td>
+  </tr>
+    
+  <tr>
+      <td>E</td>
+      <td></td>
+      <td><input type="checkbox" class="seats" value="E1"></td>
+      <td><input type="checkbox" class="seats" value="E2"></td>
+      <td><input type="checkbox" class="seats" value="E3"></td>
+      <td><input type="checkbox" class="seats" value="E4"></td>
+      <td><input type="checkbox" class="seats" value="E5"></td>
+      <td></td>
+      <td><input type="checkbox" class="seats" value="E6"></td>
+      <td><input type="checkbox" class="seats" value="E7"></td>
+      <td><input type="checkbox" class="seats" value="E8"></td>
+      <td><input type="checkbox" class="seats" value="E9"></td>
+      <td><input type="checkbox" class="seats" value="E10"></td>
+      <td></td>
+      <td><input type="checkbox" class="seats" value="E11"></td>
+      <td><input type="checkbox" class="seats" value="E12"></td>
+      <td><input type="checkbox" class="seats" value="E13"></td>
+      <td><input type="checkbox" class="seats" value="E14"></td>
+      <td><input type="checkbox" class="seats" value="E15"></td>
+      <td><input type="checkbox" class="seats" value="E16"></td>
+      <td><input type="checkbox" class="seats" value="E17"></td>
+      <td></td>
+      <td><input type="checkbox" class="seats" value="E18"></td>
+      <td><input type="checkbox" class="seats" value="E19"></td>
+      <td><input type="checkbox" class="seats" value="E20"></td>
+      <td><input type="checkbox" class="seats" value="E21"></td>
+      <td><input type="checkbox" class="seats" value="E22"></td>
+      <td><input type="checkbox" class="seats" value="E23"></td>
+      <td><input type="checkbox" class="seats" value="E24"></td>
+  </tr>
+    
+  <tr class="seatVGap"></tr>
+    
+  <tr>
+      <td>F</td>
+      <td></td>
+      <td><input type="checkbox" class="seats" value="F1"></td>
+      <td><input type="checkbox" class="seats" value="F2"></td>
+      <td><input type="checkbox" class="seats" value="F3"></td>
+      <td><input type="checkbox" class="seats" value="F4"></td>
+      <td><input type="checkbox" class="seats" value="F5"></td>
+      <td></td>
+      <td><input type="checkbox" class="seats" value="F6"></td>
+      <td><input type="checkbox" class="seats" value="F7"></td>
+      <td><input type="checkbox" class="seats" value="F8"></td>
+      <td><input type="checkbox" class="seats" value="F9"></td>
+      <td><input type="checkbox" class="seats" value="F10"></td>
+      <td></td>
+      <td><input type="checkbox" class="seats" value="F11"></td>
+      <td><input type="checkbox" class="seats" value="F12"></td>
+      <td><input type="checkbox" class="seats" value="F13"></td>
+      <td><input type="checkbox" class="seats" value="F14"></td>
+      <td><input type="checkbox" class="seats" value="F15"></td>
+      <td><input type="checkbox" class="seats" value="F16"></td>
+      <td><input type="checkbox" class="seats" value="F17"></td>
+      <td></td>
+      <td><input type="checkbox" class="seats" value="F18"></td>
+      <td><input type="checkbox" class="seats" value="F19"></td>
+      <td><input type="checkbox" class="seats" value="F20"></td>
+      <td><input type="checkbox" class="seats" value="F21"></td>
+      <td><input type="checkbox" class="seats" value="F22"></td>
+      <td><input type="checkbox" class="seats" value="F23"></td>
+      <td><input type="checkbox" class="seats" value="F24"></td>
+  </tr>
+    
+  <tr>
+      <td>G</td>
+      <td></td>
+      <td><input type="checkbox" class="seats" value="G1"></td>
+      <td><input type="checkbox" class="seats" value="G2"></td>
+      <td><input type="checkbox" class="seats" value="G3"></td>
+      <td><input type="checkbox" class="seats" value="G4"></td>
+      <td><input type="checkbox" class="seats" value="G5"></td>
+      <td></td>
+      <td><input type="checkbox" class="seats" value="G6"></td>
+      <td><input type="checkbox" class="seats" value="G7"></td>
+      <td><input type="checkbox" class="seats" value="G8"></td>
+      <td><input type="checkbox" class="seats" value="G9"></td>
+      <td><input type="checkbox" class="seats" value="G10"></td>
+      <td></td>
+      <td><input type="checkbox" class="seats" value="G11"></td>
+      <td><input type="checkbox" class="seats" value="G12"></td>
+      <td><input type="checkbox" class="seats" value="G13"></td>
+      <td><input type="checkbox" class="seats" value="G14"></td>
+      <td><input type="checkbox" class="seats" value="G15"></td>
+      <td><input type="checkbox" class="seats" value="G16"></td>
+      <td><input type="checkbox" class="seats" value="G17"></td>
+      <td></td>
+      <td><input type="checkbox" class="seats" value="G18"></td>
+      <td><input type="checkbox" class="seats" value="G19"></td>
+      <td><input type="checkbox" class="seats" value="G20"></td>
+      <td><input type="checkbox" class="seats" value="G21"></td>
+      <td><input type="checkbox" class="seats" value="G22"></td>
+      <td><input type="checkbox" class="seats" value="G23"></td>
+      <td><input type="checkbox" class="seats" value="G24"></td>
+  </tr>
+    
+  <tr>
+      <td>H</td>
+      <td></td>
+      <td><input type="checkbox" class="seats" value="H1"></td>
+      <td><input type="checkbox" class="seats" value="H2"></td>
+      <td><input type="checkbox" class="seats" value="H3"></td>
+      <td><input type="checkbox" class="seats" value="H4"></td>
+      <td><input type="checkbox" class="seats" value="H5"></td>
+      <td></td>
+      <td><input type="checkbox" class="seats" value="H6"></td>
+      <td><input type="checkbox" class="seats" value="H7"></td>
+      <td><input type="checkbox" class="seats" value="H8"></td>
+      <td><input type="checkbox" class="seats" value="H9"></td>
+      <td><input type="checkbox" class="seats" value="H10"></td>
+      <td></td>
+      <td><input type="checkbox" class="seats" value="H11"></td>
+      <td><input type="checkbox" class="seats" value="H12"></td>
+      <td><input type="checkbox" class="seats" value="H13"></td>
+      <td><input type="checkbox" class="seats" value="H14"></td>
+      <td><input type="checkbox" class="seats" value="H15"></td>
+      <td><input type="checkbox" class="seats" value="H16"></td>
+      <td><input type="checkbox" class="seats" value="H17"></td>
+      <td></td>
+      <td><input type="checkbox" class="seats" value="H18"></td>
+      <td><input type="checkbox" class="seats" value="H19"></td>
+      <td><input type="checkbox" class="seats" value="H20"></td>
+      <td><input type="checkbox" class="seats" value="H21"></td>
+      <td><input type="checkbox" class="seats" value="H22"></td>
+      <td><input type="checkbox" class="seats" value="H23"></td>
+      <td><input type="checkbox" class="seats" value="H24"></td>
+  </tr>
+    
+  <tr>
+      <td>I</td>
+      <td></td>
+      <td><input type="checkbox" class="seats" value="I1"></td>
+      <td><input type="checkbox" class="seats" value="I2"></td>
+      <td><input type="checkbox" class="seats" value="I3"></td>
+      <td><input type="checkbox" class="seats" value="I4"></td>
+      <td><input type="checkbox" class="seats" value="I5"></td>
+      <td></td>
+      <td><input type="checkbox" class="seats" value="I6"></td>
+      <td><input type="checkbox" class="seats" value="I7"></td>
+      <td><input type="checkbox" class="seats" value="I8"></td>
+      <td><input type="checkbox" class="seats" value="I9"></td>
+      <td><input type="checkbox" class="seats" value="I10"></td>
+      <td></td>
+      <td><input type="checkbox" class="seats" value="I11"></td>
+      <td><input type="checkbox" class="seats" value="I12"></td>
+      <td><input type="checkbox" class="seats" value="I13"></td>
+      <td><input type="checkbox" class="seats" value="I14"></td>
+      <td><input type="checkbox" class="seats" value="I15"></td>
+      <td><input type="checkbox" class="seats" value="I16"></td>
+      <td><input type="checkbox" class="seats" value="I17"></td>
+      <td></td>
+      <td><input type="checkbox" class="seats" value="I18"></td>
+      <td><input type="checkbox" class="seats" value="I19"></td>
+      <td><input type="checkbox" class="seats" value="I20"></td>
+      <td><input type="checkbox" class="seats" value="I21"></td>
+      <td><input type="checkbox" class="seats" value="I22"></td>
+      <td><input type="checkbox" class="seats" value="I23"></td>
+      <td><input type="checkbox" class="seats" value="I24"></td>
+  </tr>
+    
+  <tr>
+      <td>J</td>
+      <td></td>
+      <td><input type="checkbox" class="seats" value="J1"></td>
+      <td><input type="checkbox" class="seats" value="J2"></td>
+      <td><input type="checkbox" class="seats" value="J3"></td>
+      <td><input type="checkbox" class="seats" value="J4"></td>
+      <td><input type="checkbox" class="seats" value="J5"></td>
+      <td></td>
+      <td><input type="checkbox" class="seats" value="J6"></td>
+      <td><input type="checkbox" class="seats" value="J7"></td>
+      <td><input type="checkbox" class="seats" value="J8"></td>
+      <td><input type="checkbox" class="seats" value="J9"></td>
+      <td><input type="checkbox" class="seats" value="J10"></td>
+      <td></td>
+      <td><input type="checkbox" class="seats" value="J11"></td>
+      <td><input type="checkbox" class="seats" value="J12"></td>
+      <td><input type="checkbox" class="seats" value="J13"></td>
+      <td><input type="checkbox" class="seats" value="J14"></td>
+      <td><input type="checkbox" class="seats" value="J15"></td>
+      <td><input type="checkbox" class="seats" value="J16"></td>
+      <td><input type="checkbox" class="seats" value="J17"></td>
+      <td></td>
+      <td><input type="checkbox" class="seats" value="J18"></td>
+      <td><input type="checkbox" class="seats" value="J19"></td>
+      <td><input type="checkbox" class="seats" value="J20"></td>
+      <td><input type="checkbox" class="seats" value="J21"></td>
+      <td><input type="checkbox" class="seats" value="J22"></td>
+      <td><input type="checkbox" class="seats" value="J23"></td>
+      <td><input type="checkbox" class="seats" value="J24"></td>
+  </tr>
+    
+    
+  </table>
+    
+  <br/>
+  <button type="button" class="btn btn btn-success" onclick="updateTextArea()">Confirm Selection</button>
+  </center>
+  </div>
+        
+  <br/><br/>
+  <center>
+    <!--
+    <table class="Displaytable">
+    <tr>
+      <th>Patient Name</th>
+      <th>Number of Rooms</th>
+      <th>Room no.</th>
+    </tr>
+    <tr>
+      <td><textarea id="nameDisplay"></textarea></td>
+      <td><textarea id="NumberDisplay"></textarea></td>
+      <td><textarea id="seatsDisplay"></textarea></td>
+    </tr>
+  </table>
+-->
+  <table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">Patient Name</th>
+        <th scope="col">Number of Rooms</th>
+        <th scope="col">Room no.</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><textarea id="nameDisplay"></textarea></td>
+      <td><textarea id="NumberDisplay"></textarea></td>
+      <td><textarea id="seatsDisplay"></textarea></td>
+      </tr>
+      
+    </tbody>
+  </table>
+
+  </center>
+  
+  
+   
+        
+
+  </div>
+  <!-- /#wrapper -->
+
+        <!-- Optional JavaScript -->
+      <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+      <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+      </script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+      </script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+      </script>
+
+  <!-- Menu Toggle Script -->
+<!--
+  <script>
+    $("#menu-toggle").click(function(e) {
+      e.preventDefault();
+      $("#wrapper").toggleClass("toggled");
+    });
+  </script>
+-->
+
+<script>
+  function onLoaderFunc()
+{
+  $(".seatStructure *").prop("disabled", true);
+  $(".displayerBoxes *").prop("disabled", true);
+}
+function takeData()
+{
+  if (( $("#Username").val().length == 0 ) || ( $("#Numseats").val().length == 0 ))
+  {
+  alert("Please Enter your Name and No. of Room!!");
+  }
+  else
+  {
+    $(".inputForm *").prop("disabled", true);
+    $(".seatStructure *").prop("disabled", false);
+    document.getElementById("notification").innerHTML = "<b style='margin-bottom:0px;background:yellow;'> Select Rooms!</b>";
+  }
+}
+
+
+function updateTextArea() { 
+    
+  if ($("input:checked").length == ($("#Numseats").val()))
+    {
+      $(".seatStructure *").prop("disabled", true);
+      
+     var allNameVals = [];
+     var allNumberVals = [];
+     var allSeatsVals = [];
+  
+     //Storing in Array
+     allNameVals.push($("#Username").val());
+     allNumberVals.push($("#Numseats").val());
+     $('#seatsBlock :checked').each(function() {
+       allSeatsVals.push($(this).val());
+     });
+    
+     //Displaying 
+     $('#nameDisplay').val(allNameVals);
+     $('#NumberDisplay').val(allNumberVals);
+     $('#seatsDisplay').val(allSeatsVals);
+    }
+  else
+    {
+      alert("Please select " + ($("#Numseats").val()) + " seats")
+    }
+  }
+
+
+function myFunction() {
+  alert($("input:checked").length);
+}
+
+/*
+function getCookie(cname) {
+    var name = cname + "=";
+    var ca = document.cookie.split(';');
+    for(var i = 0; i < ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0) == ' ') {
+            c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
+        }
+    }
+    return "";
+}
+*/
+
+
+$(":checkbox").click(function() {
+  if ($("input:checked").length == ($("#Numseats").val())) {
+    $(":checkbox").prop('disabled', true);
+    $(':checked').prop('disabled', false);
+  }
+  else
+    {
+      $(":checkbox").prop('disabled', false);
+    }
+});
+
+
+
+</script>
+</body>
+
+</html>
