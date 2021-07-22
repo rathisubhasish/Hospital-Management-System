@@ -396,61 +396,61 @@ public class Manager extends HttpServlet {
     		  System.out.format("\nmail-%s\n",otpvalue);
     		  //-----------------------------------------------------mail material
     		  
-//    		  final String mailto = email;	  
-//    	      final String personname = name;
-//    	      final String subject = "Alphacure Hospital Verification!";
-//    	      final String messg = "!-------------------------------------------------------------!\n"
-//    	    		  +" Hello "+personname
-//    	    		  +"\n Welcome to the Alphacure Hospital! "
-//    	    		  +"\n Your verification OTP is : "+otpvalue+"\n!-------------------------------------------------------------!";
-//    	            
-//    	      //sender email id and password
-//    	      final String from = "";
-//    	      final String pass = "";
-//    	      // define the gmail host
-//    	      String host = "smtp.gmail.com";
-//    	      //create the properties object
-//    	      Properties pros = new Properties();
-//    	      
-//    	      //define the properties
-//    	      pros.put("mail.smtp.host",host);
-//    	      pros.put("mail.transport.protocol","smtp");
-//    	      pros.put("mail.smtp.auth","true");
-//    	      pros.put("mail.smtp.starttls.enable","true");
-//    	      pros.put("mail.user",from);
-//    	      pros.put("mail.password",pass);
-//    	      pros.put("mail.smtp.port","587");
-//    	      
-//    	      
-//    	      //authorized the session object
-//    	      Session session = Session.getInstance(pros, new javax.mail.Authenticator()
-//    	    		  {
-//    	    	  		protected PasswordAuthentication getPasswordAuthentication()
-//    	    	  		{
-//    	    	  			return new PasswordAuthentication(from,pass);
-//    	    	  		}
-//    	    		  }
-//    	    		  );
-//    	      
-//    	      try{
-//    	      //create a default mime message object
-//    	      MimeMessage message = new MimeMessage(session);
-//    	      
-//    	      //set from : header field
-//    	      message.addRecipient(Message.RecipientType.TO, new InternetAddress(mailto));
-//    	      
-//    	      //set the subject field
-//    	      message.setSubject(subject);
-//    	      //set the message field
-//    	      message.setText(messg);
-//    	      
-//    	      //send the message
-//    	      Transport.send(message);
-//    	      }
-//    	      catch (Exception e)
-//    	      {
-//    	    	e.printStackTrace();
-//    	      }  
+   		  final String mailto = email;	  
+   	      final String personname = name;
+   	      final String subject = "Alphacure Hospital Verification!";
+   	      final String messg = "!-------------------------------------------------------------!\n"
+   	    		  +" Hello "+personname
+   	    		  +"\n Welcome to the Alphacure Hospital! "
+   	    		  +"\n Your verification OTP is : "+otpvalue+"\n!-------------------------------------------------------------!";
+   	            
+   	      //sender email id and password
+   	      final String from = "";
+   	      final String pass = "";
+   	      // define the gmail host
+   	      String host = "smtp.gmail.com";
+   	      //create the properties object
+   	      Properties pros = new Properties();
+   	      
+   	      //define the properties
+   	      pros.put("mail.smtp.host",host);
+   	      pros.put("mail.transport.protocol","smtp");
+   	      pros.put("mail.smtp.auth","true");
+   	      pros.put("mail.smtp.starttls.enable","true");
+   	      pros.put("mail.user",from);
+   	      pros.put("mail.password",pass);
+   	      pros.put("mail.smtp.port","587");
+   	      
+   	      
+   	      //authorized the session object
+   	      Session session = Session.getInstance(pros, new javax.mail.Authenticator()
+   	    		  {
+   	    	  		protected PasswordAuthentication getPasswordAuthentication()
+   	    	  		{
+   	    	  			return new PasswordAuthentication(from,pass);
+   	    	  		}
+   	    		  }
+   	    		  );
+   	      
+   	      try{
+   	      //create a default mime message object
+   	      MimeMessage message = new MimeMessage(session);
+   	      
+   	      //set from : header field
+   	      message.addRecipient(Message.RecipientType.TO, new InternetAddress(mailto));
+   	      
+   	      //set the subject field
+   	      message.setSubject(subject);
+   	      //set the message field
+   	      message.setText(messg);
+   	      
+   	      //send the message
+   	      Transport.send(message);
+   	      }
+   	      catch (Exception e)
+   	      {
+   	    	e.printStackTrace();
+   	      }  
     		}catch (Exception c){
     		  c.printStackTrace();
     		  System.out.print("mailerror");
