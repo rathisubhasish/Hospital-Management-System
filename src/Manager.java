@@ -405,8 +405,8 @@ public class Manager extends HttpServlet {
 //    	    		  +"\n Your verification OTP is : "+otpvalue+"\n!-------------------------------------------------------------!";
 //    	            
 //    	      //sender email id and password
-//    	      final String from = "2019cssubhasish7753@poornima.edu.in";
-//    	      final String pass = "khuljaid12";
+//    	      final String from = "";
+//    	      final String pass = "";
 //    	      // define the gmail host
 //    	      String host = "smtp.gmail.com";
 //    	      //create the properties object
